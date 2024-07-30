@@ -12,31 +12,112 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"
         type="text/css" />
     <link href="css/styles.css" rel="stylesheet" />
+    <style>
+        /* Styles pour la section */
+        /* Centrer le contenu à l'intérieur de la section */
+        .container1 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        #portfolio {
+            align-items: center;
+        }
+
+        /* Styles pour les boutons de suppression */
+        .removeTagBtn {
+            background-color: transparent; /* Fond transparent */
+            color: #dc3545; /* Couleur du texte rouge pour correspondre à la bordure */
+            border: none;
+            text-align: center; /* Alignement horizontal du texte */
+            font-size: 30px; /* Taille du texte */
+            cursor: pointer; /* Curseur pointeur pour l'interaction */
+            padding: 0; /* Supprimer le padding par défaut */
+            margin-left: 10px;
+        }
+        
+        .removeTagBtn:hover {
+            border-color: #c82333; /* Bordure plus foncée au survol */
+            color: #c82333; /* Couleur du texte plus foncée au survol */
+        }
+        
+        .removeTagBtn:focus {
+            outline: none; /* Supprimer le contour par défaut du bouton en focus */
+        }
+
+        #editTagsForm {
+            margin-top: 30px; /* Ajustez la marge ici */
+            margin-bottom: 20px;
+            background-color: #f9f9f9;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Optionnel : Ajoute une ombre légère */
+            border-radius: 8px; /* Optionnel : Arrondir les coins */
+            width: 800px;
+            padding: 10px;
+        }
+        
+
+        #tagsList {
+            
+            list-style-type: none;
+            margin-left: 10px;
+        }
+
+        #tagsList li {
+            margin-bottom: 5px; /* Ajoute un peu d'espace entre les éléments de la liste */
+            display: flex; /* Utilise flexbox pour aligner le texte et le bouton de suppression */
+            align-items: center; /* Aligne les éléments verticalement */
+            justify-content: space-between; /* Aligne le texte à gauche et le bouton à droite */
+            padding: 0 10px 0 15px;
+        }
+    </style>
 </head>
 
 <body id="page-top">
     <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
         <div class="container">
-            <a class="navbar-brand" href="tasks.html">Retour aux tâches</a>
+            <a class="navbar-brand" href="#page-top">Détails</a>
             <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button"
                 data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive"
                 aria-expanded="false" aria-label="Toggle navigation">
                 Menu
                 <i class="fas fa-bars"></i>
             </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="tasks.html">Retour</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="stat.html">Stats</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </nav>
     <header class="masthead bg-primary text-white text-center">
         <div class="container d-flex align-items-center flex-column">
             <h1 class="masthead-heading text-uppercase mb-0">
-                <!- Afficher le titre de la tâche ici ->
+                <!-- Afficher le titre de la tâche ici -->
             </h1>
         </div>
     </header>
     <section class="page-section portfolio" id="portfolio">
-        <div class="container">
+        <div class="container1">
             <div id="app">
-                <!-- utiliser le javascript pour afficher les détails de la tâche -->
+                <!-- Formulaire pour ajouter un tag -->
+                <form id="addTagForm">
+                    <input type="text" id="addTagInput" placeholder="Ajouter un tag" />
+                    <button type="button" id="addTagBtn" class="btn btn-primary">Ajouter</button>
+                </form>
+                
+                <!-- Liste des tags -->
+                <ul id="tagsList">
+                    <!-- Les éléments de liste seront ajoutés ici par JavaScript -->
+                </ul>
+
                 <button id="toggleCompleteBtn" class="btn btn-primary">Marquer comme complet</button>
             </div>
         </div>
