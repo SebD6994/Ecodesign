@@ -1,5 +1,5 @@
     document.addEventListener('DOMContentLoaded', function () {
-        const apiUrl = 'http://localhost:3000/todos';
+        const apiUrl = 'https://api-todos.glitch.me/todos';
 
         // Fonction pour récupérer les todos depuis l'API
         async function fetchTodos() {

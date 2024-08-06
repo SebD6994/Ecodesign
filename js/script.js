@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Fonction pour obtenir les todos depuis l'API
     async function fetchTodos() {
         try {
-            const response = await fetch('http://localhost:3000/todos');
+            const response = await fetch('https://api-todos.glitch.me/todos');
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 is_complete: false
             };
 
-            const response = await fetch('http://localhost:3000/todos', {
+            const response = await fetch('https://api-todos.glitch.me/todos', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

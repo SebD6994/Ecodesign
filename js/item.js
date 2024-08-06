@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Fonction pour obtenir les détails d'un todo depuis l'API
     async function fetchTodoById(id) {
         try {
-            const response = await fetch(`http://localhost:3000/todos/${id}`);
+            const response = await fetch(`https://api-todos.glitch.me/todos/${id}`);
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Fonction pour mettre à jour un todo
     async function updateTodoStatus(id, isComplete) {
         try {
-            const response = await fetch(`http://localhost:3000/todos/${id}`, {
+            const response = await fetch(`https://api-todos.glitch.me/todos/${id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json'
@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Fonction pour mettre à jour les tags d'un todo
     async function updateTodoTags(id, tags) {
         try {
-            const response = await fetch(`http://localhost:3000/todos/${id}`, {
+            const response = await fetch(`https://api-todos.glitch.me/todos/${id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json'
@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Fonction pour supprimer un todo
     async function deleteTodoById(id) {
         try {
-            const response = await fetch(`http://localhost:3000/todos/${id}`, {
+            const response = await fetch(`https://api-todos.glitch.me/todos/${id}`, {
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json'
